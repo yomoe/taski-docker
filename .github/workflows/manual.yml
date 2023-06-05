@@ -133,10 +133,6 @@ jobs:
       - build_gateway_and_push_to_docker_hub
     steps:
       - name: 'Create env file'
-        run: |
-          touch .env
-          echo DOCKER_LOGIN=yomoe >> .env
-          cat .env
       - name: Checkout repo
         uses: actions/checkout@v3
       - name: Copy docker-compose.yml via ssh
@@ -157,6 +153,10 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
             cd taski
+            #создает файл .env
+            touch .env
+            echo DOCKER_LOGIN=yomoe >> .env
+            cat .env
             # Выполняет pull образов с Docker Hub
             sudo docker compose -f docker-compose.production.yml pull
             # Перезапускает все контейнеры в Docker Compose
