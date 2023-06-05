@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = bool(os.getenv('DEBUG'))
-ALLOWED_HOSTS = ['*']
+SECRET_KEY = os.getenv('SECRET_KEY', 'django')
+DEBUG = bool(os.getenv('DEBUG', True))
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
