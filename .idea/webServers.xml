@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2013e7c5-50cd-40c8-bc07-9e36849e3db0" name="япа" url="https://yap.mnogoide.ru">
+        <fileTransfer rootFolder="/home/yc-user" accessType="SFTP" host="158.160.68.200" port="22" sshConfigId="131fc3a4-d78d-4dfd-8263-757b417c9190" sshConfig="yc-user@158.160.68.200:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions controlEncoding="utf-8" dataProtectionLevel="Private" keepAliveTimeout="60000" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

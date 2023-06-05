@@ -1,0 +1,14 @@
+FROM node:18-buster-slim
+WORKDIR /app
+
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+
+RUN npm install
+
+COPY . .
+RUN npm run build
+
+# Эта команда запустит встроенный сервер на nodeJS, который будет раздавать
+# содержимое директории /app/build на порту 8000
+CMD ["npx", "-y", "http-server", "-p", "8000", "/app/build"]
