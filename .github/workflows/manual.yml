@@ -155,6 +155,7 @@ jobs:
             #создает файл .env
             touch .env
             echo DOCKER_LOGIN=yomoe >> .env
+            echo NGINX_PORT=8000 >> .env
             cat .env
             # Выполняет pull образов с Docker Hub
             sudo docker compose -f docker-compose.production.yml pull
