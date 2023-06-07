@@ -154,7 +154,7 @@ jobs:
             cd taski
             #создает файл .env
             touch .env
-            echo DOCKER_LOGIN=yomoe >> .env
+            echo DOCKER_LOGIN=${{ secrets.DOCKER_USERNAME }} >> .env
             echo NGINX_PORT=8000 >> .env
             cat .env
             # Выполняет pull образов с Docker Hub
